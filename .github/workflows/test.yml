@@ -1,0 +1,15 @@
+name: Copilot Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AI test
+        uses: actions/ai-inference@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          system-prompt: "You are a helpful assistant."
+          prompt: "Say hello."
